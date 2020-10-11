@@ -75,4 +75,7 @@ public class Partida implements Serializable {
 	
 	@Column(name = "local_partida")
 	private String localPartida;
+	
+	@Column(name = "tempo_partida")
+	private String tempoPartida;
 }
