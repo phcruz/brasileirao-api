@@ -57,16 +57,5 @@ public class PartidaTask {
 	private void gravaLogInfo(String mensagem) {
 		LOGGER.info(mensagem);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }
