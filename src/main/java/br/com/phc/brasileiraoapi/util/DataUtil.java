@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class DataUtil {
 
-	public static String formatarDateEmString(Date data, String mask) {
+	public static String formataDateEmString(Date data, String mask) {
 		DateFormat formatter = new SimpleDateFormat(mask);
 		return formatter.format(data);
 	}

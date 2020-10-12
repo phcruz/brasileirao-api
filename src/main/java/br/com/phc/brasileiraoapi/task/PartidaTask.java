@@ -3,6 +3,7 @@ package br.com.phc.brasileiraoapi.task;
 import java.util.Date;
 
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -15,10 +16,9 @@ import br.com.phc.brasileiraoapi.util.DataUtil;
 @EnableScheduling
 public class PartidaTask {
 
-	private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(PartidaTask.class);
-	
-	private static final String DD_MM_YYYY_HH_MM_SS = "dd/MM/yyyy HH:mm:ss";
+	private static final Logger LOGGER = LoggerFactory.getLogger(PartidaTask.class);
 	private static final String TIME_ZONE = "America/Sao_Paulo";
+	private static final String DD_MM_YYYY_HH_MM_SS = "dd/MM/yyyy HH:mm:ss";
 	
 	@Autowired
 	private ScrapingService scrapingService;
@@ -49,7 +49,7 @@ public class PartidaTask {
 	}
 	
 	private void inicializaAgendamento(String diaSemana) {
-		this.gravaLogInfo(String.format("%s: %s", diaSemana, DataUtil.formatarDateEmString(new Date(), DD_MM_YYYY_HH_MM_SS)));
+		this.gravaLogInfo(String.format("%s: %s", diaSemana, DataUtil.formataDateEmString(new Date(), DD_MM_YYYY_HH_MM_SS)));
 		
 		scrapingService.verificaPartidaPeriodo();
 	}
@@ -57,4 +57,16 @@ public class PartidaTask {
 	private void gravaLogInfo(String mensagem) {
 		LOGGER.info(mensagem);
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
