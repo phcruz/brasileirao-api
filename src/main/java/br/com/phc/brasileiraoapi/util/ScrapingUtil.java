@@ -42,7 +42,7 @@ public class ScrapingUtil {
 	private static final String BASE_URL_GOOGLE = "https://www.google.com.br/search?q=";
 	private static final String COMPLEMENTO_URL_GOOGLE = "&hl=pt-BR";
 
-	public PartidaGoogleDTO obtemInformaçõesGoogle(String url) {
+	public PartidaGoogleDTO obtemInformacoesGoogle(String url) {
 		Document document = null;
 
 		PartidaGoogleDTO partidaDTO = new PartidaGoogleDTO();
@@ -57,6 +57,7 @@ public class ScrapingUtil {
 			LOGGER.info(title);
 
 			StatusPartida statusPartida = obtemStatusPartida(document);
+			partidaDTO.setStatusPartida(statusPartida);
 			LOGGER.info("statusPartida: " + statusPartida);
 
 			if (statusPartida != StatusPartida.PARTIDA_NAO_INICIADA) {
